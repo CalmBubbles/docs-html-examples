@@ -33,11 +33,40 @@
                 font-family : "lightweight";
                 src : url(/fonts/lightweight.ttf);
             }
+            
+            /* I'm going to name my 'in' animation "textBoxIn" */
+            @keyframes textBoxIn
+            {
+                from { transform : scale(1, 0); }
+                
+                to { transform : none; }
+            }
+            
+            /* I'm going to name my 'out' animation "textBoxOut" */
+            
+            @keyframes textBoxIn
+            {
+                from { transform : none; }
+                
+                to { transform : translate(0, -100%); }
+            }
+            
+            /*
+            When the dialogue box is disabled these values
+            will be given to the div
+            
+            The attribute 'data-disabled' tells us if the
+            dialogue box is diabled
+            */
+            .text-box[data-disabled="true"]
+            {
+                transform : scale(1, 0);
+            }
         </style>
     </head>
     
     <body>
         <!-- add the class you made -->
-        <div class="text-box"></div>
+        <div class="text-box" data-disabled="true"></div>
     </body>
 </html>
